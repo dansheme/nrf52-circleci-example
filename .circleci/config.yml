@@ -103,19 +103,19 @@ jobs:
 
 workflows:
     version: 2
-    atwinc-aws-demo:
+    my-iot-project:
         jobs:
-            - build:
+            - build-firmware:
                 context: atwinc-aws-demo
-            - test-1-ut:
-                context: atwinc-aws-demo
-                requires:
-                    - build
-            - test-2-uart:
+            - unit-tests:
                 context: atwinc-aws-demo
                 requires:
                     - build
-            - test-3-aws:
+            - black-box-tests:
+                context: atwinc-aws-demo
+                requires:
+                    - build
+            - cloud-integration-tests:
                 context: atwinc-aws-demo
                 requires:
                     - build
