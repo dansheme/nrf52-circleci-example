@@ -1,6 +1,6 @@
 version: 2
 jobs:
-    build:
+    build-firmware:
         docker:
             - image: circleci/python
         environment:
@@ -44,7 +44,7 @@ jobs:
                     - src/pca10040/blank/armgcc/_build_2
                     - test/unity/pca10040/blank/armgcc/_build
                     - venv
-    test-1-ut:
+    unit-tests:
         docker:
             - image: circleci/python
         steps:
@@ -61,7 +61,7 @@ jobs:
                 command: |
                     . venv/bin/activate
                     jumper run -u --fw test/unity/pca10040/blank/armgcc/_build/nrf52832_xxaa.bin
-    test-2-uart:
+    black-box-tests:
         docker:
             - image: circleci/python
         steps:
@@ -78,7 +78,7 @@ jobs:
                 command: |
                     . venv/bin/activate
                     nosetests --nocapture --rednose -v test/test_runner_2.py
-    test-3-aws:
+    cloud-integration-tests:
         docker:
             - image: circleci/python
         steps:
