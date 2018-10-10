@@ -110,12 +110,12 @@ workflows:
             - unit-tests:
                 context: atwinc-aws-demo
                 requires:
-                    - build
+                    - build-firmware
             - black-box-tests:
                 context: atwinc-aws-demo
                 requires:
-                    - build
+                    - build-firmware
             - cloud-integration-tests:
                 context: atwinc-aws-demo
                 requires:
-                    - build
+                    - build-firmware
