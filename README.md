@@ -1,9 +1,9 @@
-# NRF52 + CircleCI Sample Project
+# NRF52 + CircleCI Sample Project  
 
 This is a sample project that shown a Nordic nrf52832 MCU, connected to the following peripherals:
 1. ATWINC1500 Wi-Fi controller (SPI)
 2. Button (GPIO)
-3. Bosch BME280 environmental sensor (I2C)
+3. Bosch BME280 environmental sensor (I2C )
 
 When the button is pressed, the device sends the data to a gateway which sends the data to an AWS IoT shadow device.
 
@@ -47,3 +47,4 @@ Note: Use the "US East (N. Virginia)" ("us-east-1") region for AWS services
 
 ## Running the Tests
 Execute this command to run the tests: `nosetests --rednose -sxv test/`
+ 
